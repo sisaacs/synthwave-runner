@@ -1,0 +1,165 @@
+/* Synthwave Runner Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #330066 100%);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(255, 0, 255, 0.1) 0%, transparent 70%);
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #00ffff;
+}
+
+/* Game container styles */
+.game-container {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.game-container:focus {
+  outline: none;
+}
+
+/* Background animations */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Player animations */
+.player {
+  z-index: 10;
+}
+
+/* Coin animations */
+.coin {
+  z-index: 5;
+}
+
+/* Obstacle animations */
+.obstacle {
+  z-index: 5;
+}
+
+/* UI styles */
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.ui-overlay button {
+  pointer-events: all;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .game-container {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .game-container {
+    transform: scale(0.6);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .game-container {
+    transform: scale(0.5);
+    transform-origin: center;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff1493, #00aaff);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .game-container {
+    border-color: #ffffff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+button:focus-visible {
+  outline: 2px solid #00ffff;
+  outline-offset: 2px;
+}
+
+/* Print styles (hide game when printing) */
+@media print {
+  .game-container {
+    display: none;
+  }
+  
+  body::after {
+    content: "Synthwave Runner - A browser-based infinite runner game";
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px;
+  }
+}
