@@ -88,8 +88,8 @@ const UI: React.FC<UIProps> = ({
   const renderLevelDescription = () => (
     <div style={{
       position: 'absolute',
-      top: '185px', // Increased from 140px to avoid overlap with level progress
-      left: '20px',
+      top: '20px', // Moved to align with score display
+      right: '20px', // Changed from left to right
       background: 'rgba(0, 0, 0, 0.6)',
       border: `1px solid ${levelConfig.color}`,
       borderRadius: '8px',
@@ -149,7 +149,7 @@ const UI: React.FC<UIProps> = ({
             border: '1px solid rgba(255, 255, 255, 0.2)',
           }}>
             <h3 style={{ color: '#00ffff', marginBottom: '15px' }}>Level Progression</h3>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', gap: '15px' }}>
               {Object.entries(LEVEL_CONFIG).map(([key, config]) => (
                 <div key={key} style={{ textAlign: 'center', flex: 1 }}>
                   <div style={{ 

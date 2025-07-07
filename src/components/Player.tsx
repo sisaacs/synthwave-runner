@@ -16,15 +16,15 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
       style={{
         position: 'absolute',
         left: position.x - 30,
-        top: position.y - 35,
+        top: position.y - 25, // Reduced from -35 to -25
         width: '60px',
-        height: '70px',
+        height: '50px', // Reduced from 70px to 50px
         transition: 'left 0.2s ease-out',
         filter: isAlive ? 'none' : 'grayscale(100%)',
       }}
     >
       {/* Retro Car SVG */}
-      <svg width="60" height="70" viewBox="0 0 60 70">
+      <svg width="60" height="50" viewBox="0 0 60 50"> {/* Reduced height from 70 to 50 */}
         {/* Glow effect */}
         <defs>
           <filter id="glow">
@@ -47,9 +47,9 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Car body (main chassis) */}
         <rect
           x="8"
-          y="25"
+          y="18" // Moved up from 25
           width="44"
-          height="35"
+          height="25" // Reduced from 35
           fill="url(#carGradient)"
           stroke={COLORS.secondary}
           strokeWidth="2"
@@ -60,9 +60,9 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Car hood/front */}
         <rect
           x="12"
-          y="15"
+          y="10" // Moved up from 15
           width="36"
-          height="15"
+          height="12" // Reduced from 15
           fill={COLORS.primary}
           stroke={COLORS.secondary}
           strokeWidth="2"
@@ -72,7 +72,7 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         
         {/* Windshield */}
         <polygon
-          points="15,25 45,25 40,15 20,15"
+          points="15,18 45,18 40,10 20,10" // Adjusted coordinates
           fill="url(#windshieldGradient)"
           stroke={COLORS.secondary}
           strokeWidth="1"
@@ -82,8 +82,8 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Headlights */}
         <circle
           cx="18"
-          cy="12"
-          r="3"
+          cy="8" // Moved up from 12
+          r="2" // Reduced from 3
           fill="#ffff00"
           stroke={COLORS.secondary}
           strokeWidth="1"
@@ -91,8 +91,8 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         />
         <circle
           cx="42"
-          cy="12"
-          r="3"
+          cy="8" // Moved up from 12
+          r="2" // Reduced from 3
           fill="#ffff00"
           stroke={COLORS.secondary}
           strokeWidth="1"
@@ -102,9 +102,9 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Front bumper/spoiler */}
         <rect
           x="10"
-          y="8"
+          y="5" // Moved up from 8
           width="40"
-          height="4"
+          height="3" // Reduced from 4
           fill={COLORS.secondary}
           rx="2"
           filter="url(#glow)"
@@ -113,18 +113,18 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Side details/vents */}
         <rect
           x="5"
-          y="30"
+          y="22" // Moved up from 30
           width="8"
-          height="3"
+          height="2" // Reduced from 3
           fill={COLORS.blue}
           rx="1"
           filter="url(#glow)"
         />
         <rect
           x="47"
-          y="30"
+          y="22" // Moved up from 30
           width="8"
-          height="3"
+          height="2" // Reduced from 3
           fill={COLORS.blue}
           rx="1"
           filter="url(#glow)"
@@ -132,18 +132,18 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         
         <rect
           x="5"
-          y="35"
+          y="26" // Moved up from 35
           width="8"
-          height="3"
+          height="2" // Reduced from 3
           fill={COLORS.blue}
           rx="1"
           filter="url(#glow)"
         />
         <rect
           x="47"
-          y="35"
+          y="26" // Moved up from 35
           width="8"
-          height="3"
+          height="2" // Reduced from 3
           fill={COLORS.blue}
           rx="1"
           filter="url(#glow)"
@@ -152,8 +152,8 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Wheels */}
         <circle
           cx="18"
-          cy="62"
-          r="6"
+          cy="45" // Moved up from 62
+          r="4" // Reduced from 6
           fill="#333"
           stroke={COLORS.secondary}
           strokeWidth="2"
@@ -161,8 +161,8 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         />
         <circle
           cx="42"
-          cy="62"
-          r="6"
+          cy="45" // Moved up from 62
+          r="4" // Reduced from 6
           fill="#333"
           stroke={COLORS.secondary}
           strokeWidth="2"
@@ -172,15 +172,15 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Wheel rims */}
         <circle
           cx="18"
-          cy="62"
-          r="3"
+          cy="45" // Moved up from 62
+          r="2" // Reduced from 3
           fill={COLORS.blue}
           filter="url(#glow)"
         />
         <circle
           cx="42"
-          cy="62"
-          r="3"
+          cy="45" // Moved up from 62
+          r="2" // Reduced from 3
           fill={COLORS.blue}
           filter="url(#glow)"
         />
@@ -188,9 +188,9 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Rear spoiler */}
         <rect
           x="15"
-          y="58"
+          y="41" // Moved up from 58
           width="30"
-          height="4"
+          height="3" // Reduced from 4
           fill={COLORS.purple}
           stroke={COLORS.secondary}
           strokeWidth="1"
@@ -201,15 +201,15 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Exhaust pipes */}
         <circle
           cx="20"
-          cy="65"
-          r="2"
+          cy="47" // Moved up from 65
+          r="1.5" // Reduced from 2
           fill={COLORS.accent}
           filter="url(#glow)"
         />
         <circle
           cx="40"
-          cy="65"
-          r="2"
+          cy="47" // Moved up from 65
+          r="1.5" // Reduced from 2
           fill={COLORS.accent}
           filter="url(#glow)"
         />
@@ -217,9 +217,9 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         {/* Racing stripes */}
         <rect
           x="28"
-          y="15"
+          y="10" // Moved up from 15
           width="4"
-          height="45"
+          height="33" // Reduced from 45
           fill={COLORS.secondary}
           opacity="0.7"
           rx="2"
@@ -232,9 +232,9 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
           style={{
             position: 'absolute',
             left: '-15px',
-            top: '30px',
+            top: '22px', // Adjusted for smaller car
             width: '20px',
-            height: '15px',
+            height: '12px', // Reduced height
             background: `linear-gradient(90deg, 
               ${COLORS.primary} 0%, 
               ${COLORS.secondary} 50%, 
@@ -253,12 +253,12 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
             style={{
               position: 'absolute',
               left: '15px',
-              top: '60px',
-              width: '6px',
-              height: '6px',
+              top: '43px', // Adjusted for smaller car
+              width: '5px', // Slightly smaller
+              height: '5px',
               background: COLORS.accent,
               borderRadius: '50%',
-              boxShadow: `0 0 10px ${COLORS.accent}`,
+              boxShadow: `0 0 8px ${COLORS.accent}`,
               animation: 'flicker 0.3s infinite alternate',
             }}
           />
@@ -266,12 +266,12 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
             style={{
               position: 'absolute',
               left: '35px',
-              top: '60px',
-              width: '6px',
-              height: '6px',
+              top: '43px', // Adjusted for smaller car
+              width: '5px', // Slightly smaller
+              height: '5px',
               background: COLORS.accent,
               borderRadius: '50%',
-              boxShadow: `0 0 10px ${COLORS.accent}`,
+              boxShadow: `0 0 8px ${COLORS.accent}`,
               animation: 'flicker 0.3s infinite alternate',
             }}
           />
