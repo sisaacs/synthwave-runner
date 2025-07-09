@@ -28,8 +28,8 @@ export const LEVEL_CONFIG = {
     description: 'Easy cruise through the neon highway',
     obstacleSpeed: 2,
     coinSpeed: 2,
-    spawnRate: 0.015,
-    obstacleChance: 0.3, // 30% chance for obstacles vs coins
+    spawnRate: 0.018, // Increased from 0.015
+    obstacleChance: 0.35, // Increased from 0.3 (35% chance for obstacles vs coins)
     scoreThreshold: 1000,
     color: '#00ff00', // Green
     backgroundSpeed: 1.5,
@@ -39,8 +39,8 @@ export const LEVEL_CONFIG = {
     description: 'Picking up speed on the cyber road',
     obstacleSpeed: 3,
     coinSpeed: 3,
-    spawnRate: 0.02,
-    obstacleChance: 0.4, // 40% chance for obstacles
+    spawnRate: 0.023, // Increased from 0.02
+    obstacleChance: 0.45, // Increased from 0.4 (45% chance for obstacles)
     scoreThreshold: 2500,
     color: '#ffff00', // Yellow
     backgroundSpeed: 2,
@@ -50,8 +50,8 @@ export const LEVEL_CONFIG = {
     description: 'High-speed synthwave racing',
     obstacleSpeed: 4,
     coinSpeed: 4,
-    spawnRate: 0.025,
-    obstacleChance: 0.5, // 50% chance for obstacles
+    spawnRate: 0.028, // Increased from 0.025
+    obstacleChance: 0.55, // Increased from 0.5 (55% chance for obstacles)
     scoreThreshold: 5000,
     color: '#ff8800', // Orange
     backgroundSpeed: 2.5,
@@ -61,8 +61,8 @@ export const LEVEL_CONFIG = {
     description: 'Lightning fast neon nightmare',
     obstacleSpeed: 5,
     coinSpeed: 5,
-    spawnRate: 0.03,
-    obstacleChance: 0.6, // 60% chance for obstacles
+    spawnRate: 0.033, // Increased from 0.03
+    obstacleChance: 0.65, // Increased from 0.6 (65% chance for obstacles)
     scoreThreshold: 8000,
     color: '#ff0066', // Pink
     backgroundSpeed: 3,
@@ -72,8 +72,8 @@ export const LEVEL_CONFIG = {
     description: 'Ultimate synthwave challenge',
     obstacleSpeed: 6,
     coinSpeed: 6,
-    spawnRate: 0.035,
-    obstacleChance: 0.7, // 70% chance for obstacles
+    spawnRate: 0.04, // Increased from 0.035
+    obstacleChance: 0.75, // Increased from 0.7 (75% chance for obstacles)
     scoreThreshold: 12000,
     color: '#8800ff', // Purple
     backgroundSpeed: 3.5,

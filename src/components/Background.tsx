@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { COLORS, GAME_CONFIG } from '../config/gameConfig';
 
 interface BackgroundProps {
@@ -8,6 +8,18 @@ interface BackgroundProps {
 // Synthwave background with parallax scrolling
 const Background: React.FC<BackgroundProps> = ({ isPlaying }) => {
   const [scrollOffset, setScrollOffset] = useState(0);
+
+  // Memoize star data to prevent regeneration on each render
+  const starData = useMemo(() => {
+    return Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 50,
+      delay: Math.random() * 2,
+      playingDuration: 15 + Math.random() * 10, // Static duration for playing state
+      pausedDuration: 2 + Math.random() * 3,    // Static duration for paused state
+    }));
+  }, []);
 
   // Animate background scrolling
   useEffect(() => {
@@ -24,14 +36,15 @@ const Background: React.FC<BackgroundProps> = ({ isPlaying }) => {
   const generateGridLines = () => {
     const lines = [];
     const spacing = 40;
+    const horizonY = GAME_CONFIG.gameHeight - 200; // Define horizon line
     
-    // Vertical lines
+    // Vertical lines - stop at horizon
     for (let i = 0; i < GAME_CONFIG.gameWidth; i += spacing) {
       lines.push(
         <line
           key={`v-${i}`}
           x1={i}
-          y1={0}
+          y1={horizonY}
           x2={i}
           y2={GAME_CONFIG.gameHeight}
           stroke={COLORS.grid}
@@ -195,20 +208,20 @@ const Background: React.FC<BackgroundProps> = ({ isPlaying }) => {
 
       {/* Animated stars */}
       <div className="stars">
-        {Array.from({ length: 50 }, (_, i) => (
+        {starData.map((star) => (
           <div
-            key={i}
+            key={star.id}
             className="star"
             style={{
               position: 'absolute',
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 50}%`,
+              left: `${star.left}%`,
+              top: `${star.top}%`,
               width: '2px',
               height: '2px',
               backgroundColor: COLORS.secondary,
               borderRadius: '50%',
-              animation: `twinkle ${2 + Math.random() * 3}s infinite`,
-              animationDelay: `${Math.random() * 2}s`,
+              animation: `twinkle ${isPlaying ? star.playingDuration : star.pausedDuration}s infinite`,
+              animationDelay: `${star.delay}s`,
             }}
           />
         ))}
